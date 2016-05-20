@@ -12,7 +12,7 @@ program
   .command('alias <name> [value]', 'create or update alias (<name>=[value]) config')
 
 for (var k in config) {
-  program.command(k, 'git ' + config[k])
+  program.command(k, config[k])
 }
 
 program.parse(process.argv)
