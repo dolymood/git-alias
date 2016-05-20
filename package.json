@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/dolymood/git-alias#readme",
   "dependencies": {
-    "commander": "~2.9.0",
+    "commander": "^2.9.0",
     "jsonfile": "^2.3.1"
   }
 }

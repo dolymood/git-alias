@@ -4,17 +4,76 @@ var program = require('commander')
 
 var pkg = require('../package.json')
 var config = require('../config.json')
-var g = require('../lib/main')
+var runAlias = require('../lib/main')
+var m = ''
+
+// fix windows error
+var originCommand = program.command
+program.command = function (name, desc, opts) {
+  var cmd = originCommand.call(this, ' ' + name, '', opts)
+  cmd.description(desc)
+  cmd.__name = name
+  this.executables = true
+  this._execs[cmd._name] = true
+}
+program.commandHelp = function () {
+  if (!this.commands.length) {
+    return ''
+  }
+  var commands = this.commands.filter(function(cmd) {
+    return !cmd._noHelp
+  }).map(function(cmd) {
+    var args = cmd._args.map(function(arg) {
+      return humanReadableArgName(arg)
+    }).join(' ')
+    return [
+      (cmd.__name || cmd._name)
+        + (cmd._alias ? '|' + cmd._alias : '')
+        + (cmd.options.length ? ' [options]' : '')
+        + ' ' + args,
+      cmd._description
+    ]
+  })
+
+  var width = commands.reduce(function(max, command) {
+    return Math.max(max, command[0].length)
+  }, 0)
+
+  return [
+    '',
+    '  Commands:',
+    '',
+    commands.map(function(cmd) {
+      var desc = cmd[1] ? '  ' + cmd[1] : '';
+      return pad(cmd[0], width) + desc;
+    }).join('\n').replace(/^/gm, '    '),
+    ''
+  ].join('\n')
+  function humanReadableArgName(arg) {
+    var nameOutput = arg.name + (arg.variadic === true ? '...' : '');
+
+    return arg.required
+      ? '<' + nameOutput + '>'
+      : '[' + nameOutput + ']'
+  }
+  function pad(str, width) {
+    var len = Math.max(0, width - str.length);
+    return str + Array(len + 1).join(' ');
+  }
+}
 
 program
   .version(pkg.version)
   .usage('<command>', 'run git command')
   .command('alias <name> [value]', 'create or update alias (<name>=[value]) config')
 
-for (var k in config) {
-  program.command(k, config[k])
+
+for (m in config) {
+  program.command(m, config[m])
 }
 
-program.parse(process.argv)
+program.action(function () {
+  runAlias(program.args[0], program)
+})
 
-g(program.args[0], program)
+program.parse(process.argv)
