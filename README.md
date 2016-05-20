@@ -2,7 +2,19 @@
 
 A git alias Node.js package
 
+## Install
+
+```shell
+npm i -g git-alias
+```
+
 ## Usage
+
+```shell
+g [command]
+```
+
+Commands: 
 
 ```shell
 alias <name> [value]  create or update alias (<name>=[value]) config
