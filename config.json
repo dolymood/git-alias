@@ -21,6 +21,5 @@
   "psds": "push origin develop && submodule foreach git push origin develop",
   "me": "merge",
   "med": "merge develop",
-  "mem": "merge master",
-  "xx": "commit -m \"xxxx\""
+  "mem": "merge master"
 }
