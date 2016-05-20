@@ -1,0 +1,29 @@
+{
+  "name": "git-alias",
+  "version": "0.0.1",
+  "description": "A git alias Node.js package",
+  "preferGlobal": "true",
+  "main": "lib/main.js",
+  "bin": {
+    "g": "bin/g"
+  },
+  "keywords": [
+    "git alias",
+    "git",
+    "alias"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolymood/git-alias.git"
+  },
+  "author": "dolymood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dolymood/git-alias/issues"
+  },
+  "homepage": "https://github.com/dolymood/git-alias#readme",
+  "dependencies": {
+    "commander": "~2.9.0",
+    "jsonfile": "^2.3.1"
+  }
+}

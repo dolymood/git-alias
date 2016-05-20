@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var program = require('commander')
+
+var pkg = require('../package.json')
+var config = require('../config.json')
+var g = require('../lib/main')
+
+program
+  .version(pkg.version)
+  .usage('<command>', 'run git command')
+  .command('alias <name> [value]', 'create or update alias (<name>=[value]) config')
+
+for (var k in config) {
+  program.command(k, 'git ' + config[k])
+}
+
+program.parse(process.argv)
+
+g(program.args[0], program)
