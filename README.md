@@ -21,6 +21,7 @@ alias <name> [value]  create or update alias (<name>=[value]) config
 st                    git status
 br                    git branch
 cm                    git commit -a -m
+cmd                   git commit -a -m "auto commit by git-alias"
 a                     git add
 aa                    git add .
 ch                    git checkout
