@@ -2,6 +2,7 @@
   "st": "status",
   "br": "branch",
   "cm": "commit -a -m",
+  "cmd": "commit -a -m \"auto commit by git-alias\"",
   "a": "add",
   "aa": "add .",
   "ch": "checkout",
