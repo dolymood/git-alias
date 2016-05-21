@@ -67,7 +67,6 @@ program
   .usage('<command>', 'run git command')
   .command('alias <name> [value]', 'create or update alias (<name>=[value]) config')
 
-
 for (m in config) {
   program.command(m, config[m])
 }
