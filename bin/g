@@ -50,11 +50,7 @@ program.commandHelp = function () {
     ''
   ].join('\n')
   function humanReadableArgName(arg) {
-    var nameOutput = arg.name + (arg.variadic === true ? '...' : '');
-
-    return arg.required
-      ? '<' + nameOutput + '>'
-      : '[' + nameOutput + ']'
+    return ''
   }
   function pad(str, width) {
     var len = Math.max(0, width - str.length);

@@ -17,31 +17,33 @@ g [command]
 Commands: 
 
 ```shell
-alias <name> [value]  create or update alias (<name>=[value]) config
-st                    git status
-br                    git branch
-cm                    git commit -a -m
-cmd                   git commit -a -m "auto commit by git-alias"
-a                     git add
-aa                    git add .
-ch                    git checkout
-chm                   git checkout master
-chms                  git checkout master && git submodule foreach git check out master
-chd                   git checkout develop
-chds                  git checkout develop && git submodule foreach git checkout develop
-pl                    git pull origin
-plm                   git pull origin master
-plms                  git pull origin master && git submodule foreach git pull origin master
-pld                   git pull origin develop
-plds                  git pull origin develop && git submodule foreach git pull origin develop
-ps                    git push origin
-psm                   git push origin master
-psms                  git push origin master && git submodule foreach git push origin master
-psd                   git push origin develop
-psds                  git push origin develop && git submodule foreach git push origin develop
-me                    git merge
-med                   git merge develop
-mem                   git merge master
+alias <name> <value>    create or update alias (<name>=<value>) config
+st                      status
+br                      branch
+cm                      commit -a -m
+cmd                     commit -a -m "auto commit by git-alias"
+a                       add
+aa                      add .
+ch                      checkout
+chm                     checkout master
+chms                    checkout master && submodule foreach git checkout master
+chd                     checkout develop
+chds                    checkout develop && submodule foreach git checkout develop
+pl                      pull origin
+plm                     pull origin master
+plms                    pull origin master && submodule foreach git pull origin master
+pld                     pull origin develop
+plds                    pull origin develop && submodule foreach git pull origin develop
+ps                      push origin
+psm                     push origin master
+psms                    push origin master && submodule foreach git push origin master
+psd                     push origin develop
+psds                    push origin develop && submodule foreach git push origin develop
+me                      merge
+med                     merge develop
+mem                     merge master
+cmm                     commit -a -m "default commit"
+help [cmd]              display help for [cmd]
 ```
 
 ## About add or update default alias config
