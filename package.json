@@ -1,6 +1,6 @@
 {
   "name": "git-alias",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "A git alias Node.js package",
   "preferGlobal": "true",
   "main": "lib/main.js",
