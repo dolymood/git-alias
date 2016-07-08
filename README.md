@@ -83,7 +83,7 @@ smu                     submodule update
 help [cmd]              display help for [cmd]
 ```
 
-__ Note: __
+** Note: **
 
   If the `command` is uppercase, then ${index} will be replaced by args.
 
