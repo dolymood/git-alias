@@ -42,6 +42,7 @@
   "Pss": "push origin $1 && submodule foreach git push origin $1",
   "re": "remote",
   "rea": "remote add",
+  "reao": "remote add origin",
   "reset": "remote set-url",
   "rb": "rebase",
   "rba": "rebase --abort",
